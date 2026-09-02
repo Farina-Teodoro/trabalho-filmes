@@ -8,18 +8,13 @@
 </head>
 <body>
     <header class="topbar">
-        <a class="brand" href="{{ route('admin.movies.index') }}">Catalogo de Filmes</a>
+        <a class="brand" href="{{ route('movies.index') }}">Catalogo de Filmes</a>
 
-        @auth
-            <nav class="nav">
-                <a href="{{ route('admin.movies.index') }}">Filmes</a>
-                <a class="button button-primary" href="{{ route('admin.movies.create') }}">Novo filme</a>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button class="button button-secondary" type="submit">Sair</button>
-                </form>
-            </nav>
-        @endauth
+        <nav class="nav">
+            <a href="{{ route('movies.index') }}">Catalogo</a>
+            <a class="button button-secondary" href="{{ route('admin.movies.index') }}">Administração</a>
+            <a class="button button-primary" href="{{ route('admin.movies.create') }}">Novo filme</a>
+        </nav>
     </header>
 
     <main class="page">

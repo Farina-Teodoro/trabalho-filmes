@@ -25,8 +25,15 @@
 
     <label>
         <span>Categoria</span>
-        <input type="text" name="categoria" value="{{ old('categoria', $movie->categoria) }}" maxlength="80" required>
-        @error('categoria')
+        <select name="category_id" required>
+            <option value="">Selecione</option>
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}" @selected((int) old('category_id', $movie->category_id) === $category->id)>
+                    {{ $category->nome }}
+                </option>
+            @endforeach
+        </select>
+        @error('category_id')
             <small>{{ $message }}</small>
         @enderror
     </label>

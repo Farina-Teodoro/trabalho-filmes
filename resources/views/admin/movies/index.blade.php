@@ -25,7 +25,7 @@
                     <img src="{{ $movie->imagem_capa }}" alt="Capa de {{ $movie->nome }}">
                     <div class="movie-card-body">
                         <div class="movie-meta">
-                            <span>{{ $movie->categoria }}</span>
+                            <span>{{ $movie->category?->nome ?? $movie->categoria }}</span>
                             <span>{{ $movie->ano }}</span>
                         </div>
                         <h2>{{ $movie->nome }}</h2>

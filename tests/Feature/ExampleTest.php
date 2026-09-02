@@ -16,9 +16,9 @@ class ExampleTest extends TestCase
         $this->get('/login')->assertOk();
     }
 
-    public function test_admin_requires_login(): void
+    public function test_admin_area_is_publicly_accessible(): void
     {
-        $this->get('/admin/movies')->assertRedirect('/login');
+        $this->get('/admin/movies')->assertOk();
     }
 
     public function test_authenticated_user_can_create_movie(): void
